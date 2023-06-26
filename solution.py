@@ -71,7 +71,8 @@ class Solution:
         styled_dataframe = self.dataframe.style
         for column, color in columns_with_colors.items():
             styled_dataframe = styled_dataframe.apply(assign_bg_color, axis=0,
-                                                      subset=column, c=color)
+                                                      subset=column,
+                                                      colors=color)
 
         styled_dataframe.set_caption("U.S. Presidents Birth and Death "
                                      "Information").set_table_styles(styles)
@@ -214,8 +215,7 @@ class Solution:
 
 
 if __name__ == '__main__':
-    FILE = "/Users/nayanjain/Desktop/Docs/Codes/a_problem_with_presidents/U" \
-           ".S. Presidents Birth and Death Information - Sheet1.csv"
+    FILE = "U.S. Presidents Birth and Death Information - Sheet1.csv"
     solution = Solution(FILE)
 
     # Solution to requirements 1, 2, 3 and 4.
